@@ -1,0 +1,2 @@
+module TASK_ATM {
+}
