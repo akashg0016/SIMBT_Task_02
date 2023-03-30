@@ -14,7 +14,7 @@ public class MainClass {
         int pin=in.nextInt();
         if((atmnumber==atmNumber)&&(atmpin==pin)){
             while(true){
-                System.out.println("1.Transaction History \n2.Withdraw Amount\n3.Deposit Amount\n4.View Available Balance \n5.Quit");
+                System.out.println("1.Transaction History \n2.Withdraw Amount\n3.Deposit Amount\n4.View Available Balance \n5.Transfer Amount\n6.Quit");
                 System.out.println("Enter Choice :");
                 int ch=in.nextInt();
                 if(ch==1){
@@ -32,9 +32,14 @@ public class MainClass {
                 }
                 else if(ch==4){
                 	op.viewBalance();
-
                 }
-                else if(ch==5){
+                else if(ch==5)
+                {
+                	 System.out.println("Enter amount to Transfer ");
+                     double transferAmount=in.nextDouble();
+                     op.transferAmount(transferAmount);
+                }
+                else if(ch==6){
                     System.out.println("Collect your ATM Card\n Thank you for using ATM Machine!!");
                     System.exit(0);
                 }

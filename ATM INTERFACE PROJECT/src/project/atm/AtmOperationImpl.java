@@ -1,5 +1,4 @@
 package project.atm;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +19,21 @@ public class AtmOperationImpl implements AtmOperationInterf{
                 atm.setBalance(atm.getBalance() - withdrawAmount);
                 viewBalance();
             } else {
-                System.out.println("Insufficient Balance !!");
+                System.out.println("Insufficient Balance to withdraw !!");
+            }
+    }
+    
+    
+    @Override
+    public void transferAmount(double transferAmount) {
+    	
+            if (transferAmount <= atm.getBalance()) {
+                ministmt.put(transferAmount, " Amount transfered");
+                System.out.println("Amount: " + transferAmount + "from your account ");
+                atm.setBalance(atm.getBalance() - transferAmount);
+                viewBalance();
+            } else {
+                System.out.println("Insufficient Balance to transfer!!");
             }
     }
 
@@ -30,7 +43,6 @@ public class AtmOperationImpl implements AtmOperationInterf{
         System.out.println(depositAmount+" Deposited Successfully !!");
         atm.setBalance(atm.getBalance()+depositAmount);
         viewBalance();
-
     }
 
     @Override
